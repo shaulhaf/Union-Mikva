@@ -1,35 +1,69 @@
 /* Loads config.json + dedications.json (flat-file DB) and renders the page. */
 
-const HEB_MONTHS = [
-  "יאנואר", "פעברואר", "מארץ", "אפריל", "מאי", "יוני",
-  "יולי", "אויגוסט", "סעפטעמבער", "אקטאבער", "נאוועמבער", "דעצעמבער"
-];
+/* ---- Hebrew (תאריך עברי) date formatting: "ג׳ אלול תשפ״ו" ---- */
+
+const GERESH = "\u05F3", GERSHAYIM = "\u05F4";
+
+function hebNum(n) {
+  const ones = ["", "א", "ב", "ג", "ד", "ה", "ו", "ז", "ח", "ט"];
+  const tens = ["", "י", "כ", "ל", "מ", "נ", "ס", "ע", "פ", "צ"];
+  const hundreds = ["", "ק", "ר", "ש", "ת"];
+  let s = "";
+  let h = Math.floor(n / 100);
+  while (h > 4) { s += "ת"; h -= 4; }
+  s += hundreds[h];
+  const r = n % 100;
+  if (r === 15) s += "טו";
+  else if (r === 16) s += "טז";
+  else s += tens[Math.floor(r / 10)] + ones[r % 10];
+  if (s.length === 1) return s + GERESH;
+  return s.slice(0, -1) + GERSHAYIM + s.slice(-1);
+}
+
+const HEB_MONTH_SPELLING = { "חשוון": "חשון", "סיוון": "סיון" };
+
+const hebFmt = new Intl.DateTimeFormat("he-u-ca-hebrew", {
+  day: "numeric", month: "long", year: "numeric",
+});
+
+function hebDateParts(d) {
+  const p = {};
+  hebFmt.formatToParts(d).forEach((x) => { if (x.type !== "literal") p[x.type] = x.value; });
+  const month = HEB_MONTH_SPELLING[p.month] || p.month;
+  return { day: hebNum(+p.day), month, year: hebNum(+p.year % 1000) };
+}
+
+function fmtHebDate(d) {
+  const h = hebDateParts(d);
+  return `${h.day} ${h.month} ${h.year}`;
+}
+
+function fmtHebRange(start, end) {
+  const a = hebDateParts(start), b = hebDateParts(end);
+  if (a.year === b.year && a.month === b.month) return `${a.day} — ${b.day} ${a.month} ${a.year}`;
+  if (a.year === b.year) return `${a.day} ${a.month} — ${b.day} ${b.month} ${a.year}`;
+  return `${a.day} ${a.month} ${a.year} — ${b.day} ${b.month} ${b.year}`;
+}
 
 function parseLocalDate(iso) {
   const [y, m, d] = iso.split("-").map(Number);
   return new Date(y, m - 1, d);
 }
 
-function fmtDate(iso) {
-  const d = parseLocalDate(iso);
-  return `${d.getDate()} ${HEB_MONTHS[d.getMonth()]} ${d.getFullYear()}`;
-}
-
-function fmtMonth(yyyymm) {
-  const [y, m] = yyyymm.split("-").map(Number);
-  return `${HEB_MONTHS[m - 1]} ${y}`;
-}
-
 function dedicationWhen(d) {
-  if (d.type === "day") return { label: "יום", when: fmtDate(d.date), sort: d.date };
+  if (d.type === "day") {
+    return { label: "יום", when: fmtHebDate(parseLocalDate(d.date)), sort: d.date };
+  }
   if (d.type === "week") {
     const start = parseLocalDate(d.startDate);
     const end = new Date(start);
     end.setDate(end.getDate() + 6);
-    const endIso = end.toISOString().slice(0, 10);
-    return { label: "שבוע", when: `${fmtDate(d.startDate)} — ${fmtDate(endIso)}`, sort: d.startDate };
+    return { label: "שבוע", when: fmtHebRange(start, end), sort: d.startDate };
   }
-  return { label: "חודש", when: fmtMonth(d.month), sort: d.month + "-01" };
+  const [y, m] = d.month.split("-").map(Number);
+  const start = new Date(y, m - 1, 1);
+  const end = new Date(y, m, 0);
+  return { label: "חודש", when: fmtHebRange(start, end), sort: d.month + "-01" };
 }
 
 async function loadJSON(path) {
