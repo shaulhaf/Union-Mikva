@@ -1,14 +1,15 @@
 /* ===== Mikvah Tahara — Union, NJ ===== */
 
 :root {
-  --blue-dark: #123a5c;
-  --blue: #1d5c8f;
-  --blue-light: #e8f1f8;
+  --blue-dark: #1587bd;
+  --blue: #29abe2;
+  --blue-sky: #7fd0ee;
+  --blue-light: #e6f5fc;
   --gold: #b8860b;
   --gold-light: #f5e9c9;
   --ink: #1c2733;
-  --paper: #fdfcf8;
-  --border: #d8dee5;
+  --paper: #fdfefe;
+  --border: #d3e9f4;
   --radius: 10px;
 }
 
@@ -35,36 +36,46 @@ body {
 
 a { color: var(--blue); }
 
-/* ---- Header ---- */
+/* ---- Header (full-width, logo colors) ---- */
 header.site {
-  background: linear-gradient(160deg, var(--blue-dark), var(--blue));
-  color: #fff;
+  width: 100%;
+  background: #fff;
+  border-bottom: 5px solid var(--blue);
+  color: var(--blue-dark);
   text-align: center;
-  padding: 2.5rem 1rem 2rem;
+  padding: 1.5rem 1rem 1.75rem;
 }
 header.site .bsd {
   font-size: 0.9rem;
-  opacity: 0.85;
+  color: var(--blue);
   margin-bottom: 0.75rem;
+}
+header.site .logo {
+  display: block;
+  margin: 0 auto;
+  max-width: min(320px, 80vw);
+  height: auto;
 }
 header.site h1 {
   margin: 0 0 0.25rem;
   font-size: clamp(1.8rem, 5vw, 3rem);
   letter-spacing: 0.02em;
+  color: var(--blue);
 }
 header.site .subtitle {
   font-size: 1.1rem;
-  opacity: 0.9;
+  color: var(--blue-dark);
+  margin-top: 0.75rem;
 }
 header.site .subtitle-en {
   font-size: 0.95rem;
-  opacity: 0.75;
+  color: var(--blue);
   margin-top: 0.25rem;
 }
 
 /* ---- Nav ---- */
 nav.site {
-  background: var(--blue-dark);
+  background: linear-gradient(180deg, var(--blue), var(--blue-dark));
   position: sticky;
   top: 0;
   z-index: 10;
@@ -213,8 +224,8 @@ table.info td:first-child {
 
 /* ---- Footer ---- */
 footer.site {
-  background: var(--blue-dark);
-  color: #cdd9e5;
+  background: linear-gradient(180deg, var(--blue), var(--blue-dark));
+  color: #eaf6fc;
   text-align: center;
   padding: 1.5rem 1rem;
   font-size: 0.9rem;
