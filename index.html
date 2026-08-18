@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>מקוה טהרה — יוניאן, ניו דזשערזי</title>
+  <meta name="description" content="מקוה טהרה ביוניאן, ניו דזשערזי — השתתפו בבנין המקוה, והקדישו יום, שבוע או חודש.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Hebrew:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="bsd">בס״ד</div>
+  <h1>מקוה טהרה</h1>
+  <div class="subtitle">קהל יוניאן — יוניאן, ניו דזשערזי</div>
+  <div class="subtitle-en en" style="text-align:center;">Mikvah Tahara &middot; Union, New Jersey</div>
+</header>
+
+<nav class="site">
+  <ul>
+    <li><a href="#about">אודות המקוה</a></li>
+    <li><a href="#donate">נדבות</a></li>
+    <li><a href="#dedicate">הקדשות</a></li>
+    <li><a href="#dedications">לוח הקדשות</a></li>
+    <li><a href="#contact">התקשרות</a></li>
+  </ul>
+</nav>
+
+<main>
+
+  <!-- ======== About ======== -->
+  <section id="about">
+    <h2>אודות המקוה</h2>
+    <p>
+      בעזהשי״ת הולך ונבנה מקוה טהרה עבור הקהלה החרדית ההולכת ומתרחבת ביוניאן, ניו דזשערזי,
+      לשמש את משפחות אנשי שלומנו שבסביבה במקוה נאה ומהודרת,
+      על פי כל החומרות וההידורים.
+    </p>
+    <p>
+      בנין המקוה הוא זכות נפלאה לכל הנוטלים בו חלק — 
+      <strong>״מקוה ישראל ה׳״</strong> — ובקשתנו שטוחה לפני אחינו בני ישראל להשתתף בזכות הגדולה הזאת.
+    </p>
+  </section>
+
+  <!-- ======== Donate ======== -->
+  <section id="donate">
+    <h2>נדבות — החזקת המקוה</h2>
+    <p>
+      כל נדבה, גדולה כקטנה, מסייעת להקמת המקוה. 
+      ניתן לנדב באחד מן האופנים דלהלן:
+    </p>
+
+    <div class="cards" id="donation-links">
+      <!-- Donation links load from data/config.json -->
+    </div>
+
+    <h3 style="margin-top:2rem;">Other Ways to Give</h3>
+    <div class="en">
+      <table class="info">
+        <tr><td>Zelle</td><td id="info-zelle"></td></tr>
+        <tr><td>Checks payable to</td><td id="info-checks"></td></tr>
+        <tr><td>Mail to</td><td id="info-mail"></td></tr>
+        <tr><td>Tax ID (EIN)</td><td id="info-ein"></td></tr>
+      </table>
+      <p class="notice" style="margin-top:1rem;">
+        All donations are tax-deductible to the fullest extent permitted by law.
+        A receipt will be provided for your records. 501(c)(3) status pending &mdash;
+        update this notice once confirmed.
+      </p>
+    </div>
+  </section>
+
+  <!-- ======== Dedicate ======== -->
+  <section id="dedicate">
+    <h2>הקדשות — יום, שבוע או חודש</h2>
+    <p>
+      ביכולתכם להקדיש את המקוה לעילוי נשמת, לזכות רפואה שלימה, לזכות זרע של קיימא,
+      או לכבוד שמחה. ההקדשה תתפרסם על <a href="#dedications">לוח ההקדשות</a> כאן באתר.
+    </p>
+
+    <div class="cards">
+      <div class="card tier">
+        <div class="tier-name">יום</div>
+        <div class="price" id="price-day"></div>
+        <a class="btn" href="#contact">להקדיש</a>
+      </div>
+      <div class="card tier">
+        <div class="tier-name">שבוע</div>
+        <div class="price" id="price-week"></div>
+        <a class="btn" href="#contact">להקדיש</a>
+      </div>
+      <div class="card tier">
+        <div class="tier-name">חודש</div>
+        <div class="price" id="price-month"></div>
+        <a class="btn" href="#contact">להקדיש</a>
+      </div>
+    </div>
+
+    <p style="margin-top:1rem;">
+      לקביעת תאריך, נא להתקשר עמנו (להלן) עם התאריך המבוקש
+      ונוסח ההקדשה.
+    </p>
+  </section>
+
+  <!-- ======== Dedications board ======== -->
+  <section id="dedications">
+    <h2>לוח הקדשות</h2>
+    <div class="dedication-list" id="dedication-list">
+      <!-- Dedications load from data/dedications.json -->
+    </div>
+  </section>
+
+  <!-- ======== Contact ======== -->
+  <section id="contact">
+    <h2>התקשרות</h2>
+    <p>להקדשות, נדבות, או לכל שאלה ובירור:</p>
+    <div class="en">
+      <table class="info">
+        <tr><td>Email</td><td id="info-email"></td></tr>
+        <tr><td>Phone</td><td id="info-phone"></td></tr>
+      </table>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div>מקוה טהרה — יוניאן, ניו דזשערזי</div>
+  <div class="en" style="text-align:center; margin-top:0.5rem;">
+    &copy; Mikvah Tahara of Union, NJ &middot; All rights reserved
+  </div>
+</footer>
+
+<script src="assets/site.js"></script>
+</body>
+</html>

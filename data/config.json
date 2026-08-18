@@ -1,0 +1,22 @@
+{
+  "orgNameHebrew": "מקוה טהרה דקהל יוניאן",
+  "orgNameEnglish": "Mikvah Tahara of Union, NJ",
+  "addressHebrew": "יוניאן, ניו דזשערזי",
+  "addressEnglish": "Union, NJ 07083",
+  "email": "info@example.org",
+  "phone": "(555) 555-5555",
+  "donationLinks": [
+    { "label": "Pledger", "url": "https://org.pledgercharitable.org/ChargeCard?ein=881472954B&camp=", "note": "קארד Pledger" },
+    { "label": "OJC", "url": "https://secure.ojccardpaymentsite.org/MQAAADUAAAA4AAAAOAAAADMAAAA=", "note": "קארד OJC" },
+    { "label": "קרעדיט קארד", "url": "https://secure.cardknox.com/mikvahtaharaunion", "note": "כל סוגי קרעדיט קארד" }
+  ],
+  "zelle": "donate@example.org",
+  "checksPayableTo": "Mikvah Tahara of Union Inc.",
+  "mailingAddress": "P.O. Box 000, Union, NJ 07083",
+  "ein": "XX-XXXXXXX",
+  "dedicationPrices": {
+    "day": 180,
+    "week": 1000,
+    "month": 3600
+  }
+}

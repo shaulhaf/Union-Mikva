@@ -1,0 +1,26 @@
+{
+  "_comment": "Flat-file database of dedications. type: day | week | month. For 'day' use date. For 'week' use startDate (the Sunday). For 'month' use month as YYYY-MM. text is shown publicly; keep donor private unless showDonor is true.",
+  "dedications": [
+    {
+      "type": "day",
+      "date": "2026-09-01",
+      "text": "לעילוי נשמת ר׳ פלוני בן פלוני ז״ל",
+      "donor": "משפחת פלוני",
+      "showDonor": true
+    },
+    {
+      "type": "week",
+      "startDate": "2026-09-06",
+      "text": "לזכות רפואה שלימה לחולי ישראל",
+      "donor": "",
+      "showDonor": false
+    },
+    {
+      "type": "month",
+      "month": "2026-10",
+      "text": "לזכות זרע של קיימא",
+      "donor": "",
+      "showDonor": false
+    }
+  ]
+}

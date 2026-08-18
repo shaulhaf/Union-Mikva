@@ -1,0 +1,235 @@
+/* ===== Mikvah Tahara — Union, NJ ===== */
+
+:root {
+  --blue-dark: #123a5c;
+  --blue: #1d5c8f;
+  --blue-light: #e8f1f8;
+  --gold: #b8860b;
+  --gold-light: #f5e9c9;
+  --ink: #1c2733;
+  --paper: #fdfcf8;
+  --border: #d8dee5;
+  --radius: 10px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Noto Serif Hebrew", "Frank Ruhl Libre", Georgia, serif;
+  font-size: 19px;
+  line-height: 1.7;
+}
+
+/* English blocks inside the RTL page */
+.en {
+  direction: ltr;
+  text-align: left;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 17px;
+}
+
+a { color: var(--blue); }
+
+/* ---- Header ---- */
+header.site {
+  background: linear-gradient(160deg, var(--blue-dark), var(--blue));
+  color: #fff;
+  text-align: center;
+  padding: 2.5rem 1rem 2rem;
+}
+header.site .bsd {
+  font-size: 0.9rem;
+  opacity: 0.85;
+  margin-bottom: 0.75rem;
+}
+header.site h1 {
+  margin: 0 0 0.25rem;
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  letter-spacing: 0.02em;
+}
+header.site .subtitle {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+header.site .subtitle-en {
+  font-size: 0.95rem;
+  opacity: 0.75;
+  margin-top: 0.25rem;
+}
+
+/* ---- Nav ---- */
+nav.site {
+  background: var(--blue-dark);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+nav.site ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+nav.site a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.7rem 1.2rem;
+  font-size: 1rem;
+}
+nav.site a:hover { background: rgba(255,255,255,0.12); }
+
+/* ---- Layout ---- */
+main {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 1rem 1.25rem 3rem;
+}
+section { margin-top: 2.5rem; }
+h2 {
+  color: var(--blue-dark);
+  border-bottom: 3px solid var(--gold);
+  padding-bottom: 0.3rem;
+  font-size: 1.6rem;
+}
+h3 { color: var(--blue-dark); }
+
+/* ---- Cards / donation links ---- */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+a.donate-card {
+  display: block;
+  text-decoration: none;
+  color: var(--ink);
+  text-align: center;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+a.donate-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+  border-color: var(--blue);
+}
+a.donate-card .label {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--blue-dark);
+}
+a.donate-card .note {
+  font-size: 0.9rem;
+  color: #5a6a7a;
+  margin-top: 0.25rem;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--gold);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 0.6rem 1.6rem;
+  border-radius: 999px;
+  margin-top: 0.75rem;
+}
+.btn:hover { background: #9a7009; }
+.btn.blue { background: var(--blue); }
+.btn.blue:hover { background: var(--blue-dark); }
+
+/* ---- Dedication tiers ---- */
+.tier {
+  text-align: center;
+  background: linear-gradient(180deg, #fff, var(--blue-light));
+}
+.tier .price {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--gold);
+  direction: ltr;
+}
+.tier .tier-name { font-size: 1.3rem; font-weight: 700; }
+
+/* ---- Dedications list ---- */
+.dedication-list { margin-top: 1rem; }
+.dedication-item {
+  background: #fff;
+  border-right: 5px solid var(--gold);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  border-left: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.9rem 1.2rem;
+  margin-bottom: 0.75rem;
+}
+.dedication-item .when {
+  font-size: 0.9rem;
+  color: #5a6a7a;
+}
+.dedication-item .text { font-size: 1.15rem; }
+.dedication-item .donor { font-size: 0.95rem; color: var(--blue-dark); }
+.badge {
+  display: inline-block;
+  font-size: 0.8rem;
+  background: var(--blue-light);
+  color: var(--blue-dark);
+  border-radius: 999px;
+  padding: 0.05rem 0.7rem;
+  margin-inline-start: 0.5rem;
+}
+
+/* ---- Info table (English financial details) ---- */
+table.info {
+  border-collapse: collapse;
+  width: 100%;
+  background: #fff;
+}
+table.info td {
+  border: 1px solid var(--border);
+  padding: 0.5rem 0.8rem;
+  vertical-align: top;
+}
+table.info td:first-child {
+  font-weight: 700;
+  white-space: nowrap;
+  background: var(--blue-light);
+}
+
+/* ---- Footer ---- */
+footer.site {
+  background: var(--blue-dark);
+  color: #cdd9e5;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  font-size: 0.9rem;
+  margin-top: 3rem;
+}
+footer.site a { color: #fff; }
+
+.notice {
+  background: var(--gold-light);
+  border: 1px solid var(--gold);
+  border-radius: var(--radius);
+  padding: 0.75rem 1.25rem;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 600px) {
+  body { font-size: 17px; }
+}
