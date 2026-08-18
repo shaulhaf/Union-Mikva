@@ -98,6 +98,43 @@ nav.site a {
 }
 nav.site a:hover { background: rgba(255,255,255,0.12); }
 
+/* ---- Hero ---- */
+.hero {
+  width: 100%;
+  min-height: clamp(220px, 40vw, 420px);
+  background-image:
+    linear-gradient(rgba(18, 74, 105, 0.25), rgba(18, 74, 105, 0.35)),
+    url("photos/mikvah-hero.jpg");
+  background-size: cover;
+  background-position: center 60%;
+  background-color: var(--blue-light);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.hero-overlay {
+  width: 100%;
+  text-align: center;
+  padding: 1rem;
+  background: linear-gradient(transparent, rgba(18, 74, 105, 0.55));
+}
+.hero-quote {
+  color: #fff;
+  font-size: clamp(1.3rem, 3.5vw, 2rem);
+  font-weight: 700;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.45);
+}
+
+.about-photo {
+  display: block;
+  width: 100%;
+  max-width: 480px;
+  margin: 1.25rem auto 0;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
 /* ---- Layout ---- */
 main {
   max-width: 880px;
