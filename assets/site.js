@@ -83,12 +83,10 @@ function renderDonationLinks(config) {
   const wrap = document.getElementById("donation-links");
   if (!wrap) return;
   config.donationLinks.forEach((link) => {
-    const a = el("a", "card donate-card");
+    const a = el("a", null, link.label);
     a.href = link.url;
     a.target = "_blank";
     a.rel = "noopener";
-    a.appendChild(el("div", "label", link.label));
-    if (link.note) a.appendChild(el("div", "note", link.note));
     wrap.appendChild(a);
   });
 }
@@ -101,6 +99,7 @@ function renderFinancialInfo(config) {
   set("info-zelle", config.zelle);
   set("info-checks", config.checksPayableTo);
   set("info-mail", config.mailingAddress);
+  set("info-mail2", config.mailingAddress);
   set("info-ein", config.ein);
   set("info-email", config.email);
   set("info-phone", config.phone);
@@ -117,6 +116,35 @@ function renderPrices(config) {
   set("price-month", p.month);
 }
 
+/* Hero panel: the current (or next upcoming) DATE and WEEK dedications */
+function renderHeroDedications(data) {
+  const wrap = document.getElementById("hero-dedications");
+  if (!wrap) return;
+  const today = new Date().toISOString().slice(0, 10);
+  const kinds = [
+    { type: "day", en: "DATE", he: "תאריך" },
+    { type: "week", en: "WEEK", he: "שבוע" },
+  ];
+  kinds.forEach(({ type, en, he }) => {
+    const current = data.dedications
+      .filter((d) => d.type === type)
+      .map((d) => ({ d, meta: dedicationWhen(d) }))
+      .sort((a, b) => a.meta.sort.localeCompare(b.meta.sort))
+      .find((x) => type === "day" ? x.meta.sort >= today : true);
+    if (!current) return;
+    const box = el("div", "hero-ded");
+    const kind = el("div", "kind");
+    kind.appendChild(el("span", null, en));
+    kind.appendChild(el("span", "heb", he));
+    box.appendChild(kind);
+    box.appendChild(el("div", "text", current.d.text));
+    if (current.d.showDonor && current.d.donor) {
+      box.appendChild(el("div", "donor", `נתנדב ע״י ${current.d.donor}`));
+    }
+    wrap.appendChild(box);
+  });
+}
+
 function renderDedications(data) {
   const wrap = document.getElementById("dedication-list");
   if (!wrap) return;
@@ -125,7 +153,7 @@ function renderDedications(data) {
     .sort((a, b) => a.meta.sort.localeCompare(b.meta.sort));
 
   if (items.length === 0) {
-    wrap.appendChild(el("p", null, "עדיין לא נרשמו הקדשות."));
+    wrap.appendChild(el("p", null, "No dedications yet."));
     return;
   }
 
@@ -151,6 +179,7 @@ async function init() {
     renderDonationLinks(config);
     renderFinancialInfo(config);
     renderPrices(config);
+    renderHeroDedications(dedications);
     renderDedications(dedications);
   } catch (err) {
     console.error(err);

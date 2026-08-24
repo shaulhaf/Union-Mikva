@@ -1,153 +1,179 @@
 <!DOCTYPE html>
-<html lang="he" dir="rtl">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>מקוה טהרה — יוניאן, ניו דזשערזי</title>
-  <meta name="description" content="מקוה טהרה ביוניאן, ניו דזשערזי — השתתפו בבנין המקוה, והקדישו יום, שבוע או חודש.">
+  <title>The Union Mikvah — Union, NJ</title>
+  <meta name="description" content="The Union Mikvah serves the heimish community in Union, NJ and surrounding areas. Sponsor a day, week, or month, or make a donation.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Hebrew:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Assistant:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 
-<header class="site">
-  <div class="bsd">בס״ד</div>
-  <img class="logo" src="assets/logo.png" alt="מקוה טהרה מי בלומא — יוניאן"
-       onerror="this.style.display='none';document.getElementById('header-text').style.display='block';">
-  <div id="header-text" style="display:none;">
-    <h1>מקוה טהרה</h1>
-  </div>
-  <div class="subtitle">מי בלומא — יוניאן, ניו דזשערזי</div>
-  <div class="subtitle-en en" style="text-align:center;">Mikvah Tahara &middot; Union, New Jersey</div>
-</header>
-
 <nav class="site">
-  <ul>
-    <li><a href="#about">אודות המקוה</a></li>
-    <li><a href="#donate">נדבות</a></li>
-    <li><a href="#dedicate">הקדשות</a></li>
-    <li><a href="#dedications">לוח הקדשות</a></li>
-    <li><a href="#contact">התקשרות</a></li>
-  </ul>
+  <div class="nav-inner">
+    <img class="nav-logo" src="assets/logo.png" alt="Mikvah Tahara — Union, NJ">
+    <ul>
+      <li><a href="#about">About the Mikvah</a></li>
+      <li><a href="#donate">To Donate</a></li>
+      <li><a href="#dedications">Dedications</a></li>
+      <li><a href="#contact">Contact us</a></li>
+    </ul>
+  </div>
 </nav>
 
-<!-- ======== Hero (video of the mikvah) ======== -->
-<div class="hero">
+<!-- ======== Hero ======== -->
+<section class="hero">
   <video class="hero-video" autoplay muted loop playsinline poster="assets/photos/mikvah-hero.jpg">
     <source src="assets/photos/hero-video.mp4" type="video/mp4">
   </video>
-  <div class="hero-overlay">
-    <div class="hero-quote">״מקוה ישראל ה׳״</div>
+  <div class="hero-content">
+    <h1 class="hero-title">The Union Mikvah</h1>
+    <aside class="hero-dedications" id="hero-dedications">
+      <!-- Current DATE / WEEK dedications load from data/dedications.json -->
+    </aside>
   </div>
-</div>
+</section>
 
-<main>
-
-  <!-- ======== About ======== -->
-  <section id="about">
-    <h2>אודות המקוה</h2>
+<!-- ======== About ======== -->
+<section id="about" class="about">
+  <div class="about-title">
+    <h2>Union<br>Mikvah</h2>
+  </div>
+  <div class="about-text">
     <p>
-      בעזהשי״ת הולך ונבנה מקוה טהרה עבור הקהלה החרדית ההולכת ומתרחבת ביוניאן, ניו דזשערזי,
-      לשמש את משפחות אנשי שלומנו שבסביבה במקוה נאה ומהודרת,
-      על פי כל החומרות וההידורים.
+      The Union Mikvah was built to serve the heimish community in Union and
+      the surrounding areas with a beautiful, modern mikvah built to the
+      highest standards of halachic hiddur.
     </p>
     <p>
-      בנין המקוה הוא זכות נפלאה לכל הנוטלים בו חלק — 
-      <strong>״מקוה ישראל ה׳״</strong> — ובקשתנו שטוחה לפני אחינו בני ישראל להשתתף בזכות הגדולה הזאת.
+      It is the only mikvah in Central New Jersey built to this level of
+      excellence, serving families from Union and many surrounding towns
+      and cities.
     </p>
-    <img class="about-photo" src="assets/photos/mikvah-inside.jpg" alt="מראה המקוה מבפנים"
+    <p>
+      With a warm, welcoming atmosphere and meticulous attention to every
+      halachic detail, the Union Mikvah provides a place where every visitor
+      can immerse with comfort, dignity, and peace of mind.
+    </p>
+    <img class="about-photo" src="assets/photos/mikvah-inside.jpg" alt="Inside the Union Mikvah"
          loading="lazy" onerror="this.style.display='none';">
-  </section>
+  </div>
+</section>
 
-  <!-- ======== Donate ======== -->
-  <section id="donate">
-    <h2>נדבות — החזקת המקוה</h2>
+<!-- ======== Sponsorship opportunities ======== -->
+<section id="sponsorship" class="sponsorship">
+  <div class="sponsorship-text">
+    <h2>Sponsorship<br>opportunities</h2>
     <p>
-      כל נדבה, גדולה כקטנה, מסייעת להקמת המקוה. 
-      ניתן לנדב באחד מן האופנים דלהלן:
+      There are many opportunities to partner in this important mitzvah.
+      Sponsorships help support the ongoing operation, maintenance, and
+      upkeep of the mikvah, while allowing you to have a meaningful share
+      in this vital institution. Whether through sponsoring a specific area,
+      an operating expense, or making a general dedication, every sponsorship
+      helps ensure that the Union Mikvah continues serving the community at
+      the highest standards.
     </p>
+  </div>
+  <div class="sponsorship-tiers">
+    <a class="tier" href="#donate">
+      <span class="tier-name">Sponsor a Day</span>
+      <span class="tier-price" id="price-day"></span>
+    </a>
+    <a class="tier" href="#donate">
+      <span class="tier-name">Sponsor a Week</span>
+      <span class="tier-price" id="price-week"></span>
+    </a>
+    <a class="tier" href="#donate">
+      <span class="tier-name">Sponsor a Month</span>
+      <span class="tier-price" id="price-month"></span>
+    </a>
+  </div>
+</section>
 
-    <div class="cards" id="donation-links">
-      <!-- Donation links load from data/config.json -->
-    </div>
+<!-- ======== Dedications board ======== -->
+<section id="dedications" class="dedications">
+  <h2>Dedications <span class="heb">לוח הקדשות</span></h2>
+  <div class="dedication-list" id="dedication-list">
+    <!-- Dedications load from data/dedications.json -->
+  </div>
+  <p class="dedications-note">
+    To reserve a date, please <a href="#contact">contact us</a> with your
+    preferred date and the text of the dedication.
+  </p>
+</section>
 
-    <h3 style="margin-top:2rem;">Other Ways to Give</h3>
-    <div class="en">
-      <table class="info">
-        <tr><td>Zelle</td><td id="info-zelle"></td></tr>
-        <tr><td>Checks payable to</td><td id="info-checks"></td></tr>
-        <tr><td>Mail to</td><td id="info-mail"></td></tr>
-        <tr><td>Tax ID (EIN)</td><td id="info-ein"></td></tr>
-      </table>
-      <p class="notice" style="margin-top:1rem;">
-        All donations are tax-deductible to the fullest extent permitted by law.
-        A receipt will be provided for your records. 501(c)(3) status pending &mdash;
-        update this notice once confirmed.
+<!-- ======== Testimonials ======== -->
+<section id="testimonials" class="testimonials">
+  <h2>Testimonials</h2>
+  <div class="testimonial-cards">
+    <div class="card">
+      <p>
+        Mordechai M. made a donation to the Mikvah as a zechus to find the
+        right home to purchase. The very next day, a broker showed him a
+        house that turned out to be exactly what he was looking for — and,
+        to top it off, he was able to purchase it at a great price.
       </p>
     </div>
-  </section>
-
-  <!-- ======== Dedicate ======== -->
-  <section id="dedicate">
-    <h2>הקדשות — יום, שבוע או חודש</h2>
-    <p>
-      ביכולתכם להקדיש את המקוה לעילוי נשמת, לזכות רפואה שלימה, לזכות זרע של קיימא,
-      או לכבוד שמחה. ההקדשה תתפרסם על <a href="#dedications">לוח ההקדשות</a> כאן באתר.
-    </p>
-
-    <div class="cards">
-      <div class="card tier">
-        <div class="tier-name">יום</div>
-        <div class="price" id="price-day"></div>
-        <a class="btn" href="#contact">להקדיש</a>
-      </div>
-      <div class="card tier">
-        <div class="tier-name">שבוע</div>
-        <div class="price" id="price-week"></div>
-        <a class="btn" href="#contact">להקדיש</a>
-      </div>
-      <div class="card tier">
-        <div class="tier-name">חודש</div>
-        <div class="price" id="price-month"></div>
-        <a class="btn" href="#contact">להקדיש</a>
-      </div>
+    <div class="card">
+      <p>
+        After eight years of waiting for a child, Naomi's classmates came
+        together to dedicate a room in the Mikvah in her zechus. Nine months
+        later, Naomi was holding her own baby boy in her arms.
+      </p>
     </div>
-
-    <p style="margin-top:1rem;">
-      לקביעת תאריך, נא להתקשר עמנו (להלן) עם התאריך המבוקש
-      ונוסח ההקדשה.
-    </p>
-  </section>
-
-  <!-- ======== Dedications board ======== -->
-  <section id="dedications">
-    <h2>לוח הקדשות</h2>
-    <div class="dedication-list" id="dedication-list">
-      <!-- Dedications load from data/dedications.json -->
+    <div class="card">
+      <p>
+        Baruch made a generous donation toward the completion of the Mikvah,
+        with a heartfelt wish that it should be a zechus for him to be
+        blessed with more children after a long break. A year later, his
+        family was blessed with triplets. A remarkable yeshuah and a powerful
+        reminder of the incredible zechus of supporting a mikvah.
+      </p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ======== Contact ======== -->
-  <section id="contact">
-    <h2>התקשרות</h2>
-    <p>להקדשות, נדבות, או לכל שאלה ובירור:</p>
-    <div class="en">
-      <table class="info">
-        <tr><td>Email</td><td id="info-email"></td></tr>
-        <tr><td>Phone</td><td id="info-phone"></td></tr>
-      </table>
-    </div>
-  </section>
+<!-- ======== Donation Page ======== -->
+<section id="donate" class="donation">
+  <h2>Donation<br>Page</h2>
+  <div class="donation-panel">
+    <div class="don-row"><span class="don-label">Zelle</span><span class="don-value" id="info-zelle"></span></div>
+    <div class="don-row"><span class="don-label">Check</span><span class="don-value" id="info-checks"></span></div>
+    <div class="don-row"><span class="don-label">Mail</span><span class="don-value" id="info-mail"></span></div>
+  </div>
+  <div class="donation-buttons" id="donation-links">
+    <!-- Payment links load from data/config.json -->
+  </div>
+  <p class="ein">Tax ID (EIN) <span id="info-ein"></span></p>
+  <p class="notice">
+    All donations are tax-deductible to the fullest extent permitted by law.
+    A receipt will be provided for your records.
+  </p>
+</section>
 
-</main>
+<!-- ======== Video ======== -->
+<section id="video" class="video-section">
+  <video controls preload="metadata" poster="assets/photos/mikvah-hero.jpg">
+    <source src="assets/photos/hero-video.mp4" type="video/mp4">
+  </video>
+</section>
+
+<!-- ======== Contact ======== -->
+<section id="contact" class="contact">
+  <h2>Contact us</h2>
+  <div class="donation-panel">
+    <div class="don-row"><span class="don-label">Phone</span><span class="don-value" id="info-phone"></span></div>
+    <div class="don-row"><span class="don-label">Email</span><span class="don-value" id="info-email"></span></div>
+    <div class="don-row"><span class="don-label">Address</span><span class="don-value" id="info-mail2"></span></div>
+  </div>
+</section>
 
 <footer class="site">
-  <div>מקוה טהרה — יוניאן, ניו דזשערזי</div>
-  <div class="en" style="text-align:center; margin-top:0.5rem;">
-    &copy; Mikvah Tahara of Union, NJ &middot; All rights reserved
-  </div>
+  <div>The Union Mikvah &middot; Union, New Jersey</div>
+  <div class="heb">מקוה טהרה — יוניאן, ניו דזשערזי</div>
 </footer>
 
 <script src="assets/site.js"></script>
