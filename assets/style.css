@@ -100,19 +100,26 @@ nav.site a:hover { background: rgba(255,255,255,0.12); }
 
 /* ---- Hero ---- */
 .hero {
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
   width: 100%;
   min-height: clamp(220px, 40vw, 420px);
-  background-image:
-    linear-gradient(rgba(18, 74, 105, 0.25), rgba(18, 74, 105, 0.35)),
-    url("photos/mikvah-hero.jpg");
-  background-size: cover;
-  background-position: center 60%;
   background-color: var(--blue-light);
   display: flex;
   align-items: flex-end;
   justify-content: center;
 }
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
 .hero-overlay {
+  position: relative;
   width: 100%;
   text-align: center;
   padding: 1rem;
