@@ -44,16 +44,28 @@ section { position: relative; }
   align-items: center;
 }
 
-/* ---- Wave texture (extracted from Website.ai) ---- */
+/* ---- Wave texture (extracted from Website.ai) ----
+   Each section's wave band overlaps the next section via a negative
+   bottom margin, so the crests flow over the following background. */
 .waves {
   width: 100%;
   height: clamp(90px, 17vw, 330px);
   background-size: 100% 100%;
   background-repeat: no-repeat;
   pointer-events: none;
+  position: relative;
+  z-index: 2;
+  margin-bottom: calc(0px - clamp(30px, 5.5vw, 110px));
 }
 .waves-white { background-image: url("waves-white.svg"); }
 .waves-cyan  { background-image: url("waves-cyan.svg"); }
+
+/* the overlapped section needs breathing room under the incoming wave */
+.waves + section .section-inner,
+section .section-inner,
+.video-frame {
+  padding-top: clamp(5rem, 8vw, 7.5rem);
+}
 
 /* ---- Hero (artboard 1) ---- */
 .hero {
@@ -183,22 +195,6 @@ section { position: relative; }
   background-size: 100% 100%;
   z-index: 3;
   pointer-events: none;
-}
-.hero-title-box {
-  position: absolute;
-  bottom: clamp(0.5rem, 2vw, 2rem);
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--white);
-  padding: 0.5rem 3rem;
-  z-index: 4;
-}
-.hero-title-box h1 {
-  margin: 0;
-  color: var(--cyan);
-  font-size: clamp(1.4rem, 3vw, 2.6rem);
-  font-weight: 700;
-  white-space: nowrap;
 }
 
 /* ---- About (artboard 2: cyan bg, white title, ink text) ---- */
@@ -379,11 +375,15 @@ section { position: relative; }
   margin: 0 auto;
   padding: 4.5rem 1.5rem 2rem;
 }
-.video-frame video {
-  display: block;
-  width: 100%;
+.video-embed {
   background: var(--white);
   border: clamp(12px, 2vw, 28px) solid var(--white);
+}
+.video-embed iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
 }
 
 /* ---- Contact ---- */
@@ -421,6 +421,22 @@ footer.site .heb { margin-top: 0.35rem; opacity: 0.8; }
     display: flex;
   }
   .hero-logo { display: block; }
-  .hero-nav { width: min(380px, 90vw); }
+  /* nav: single horizontal row at the top, above the logo */
+  .hero-nav {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 0.4rem;
+    width: 100%;
+    padding: 0 0.4rem;
+    margin: 0.75rem auto 0;
+  }
+  .hero-nav a {
+    flex: 1 1 auto;
+    min-width: 0;
+    font-size: clamp(0.6rem, 2.35vw, 0.85rem);
+    padding: 0.6em 0.3em;
+    white-space: nowrap;
+  }
   .hero-dedications { width: min(330px, 90vw); }
 }
