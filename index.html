@@ -12,119 +12,121 @@
 </head>
 <body>
 
-<nav class="site">
-  <div class="nav-inner">
-    <img class="nav-logo" src="assets/logo.png" alt="Mikvah Tahara — Union, NJ">
-    <ul>
-      <li><a href="#about">About the Mikvah</a></li>
-      <li><a href="#donate">To Donate</a></li>
-      <li><a href="#dedications">Dedications</a></li>
-      <li><a href="#contact">Contact us</a></li>
-    </ul>
-  </div>
-</nav>
-
-<!-- ======== Hero ======== -->
-<section class="hero">
+<!-- ======== Hero (artboard 1) ======== -->
+<section class="hero" id="top">
   <video class="hero-video" autoplay muted loop playsinline poster="assets/photos/mikvah-hero.jpg">
     <source src="assets/photos/hero-video.mp4" type="video/mp4">
   </video>
-  <div class="hero-content">
-    <h1 class="hero-title">The Union Mikvah</h1>
-    <aside class="hero-dedications" id="hero-dedications">
-      <!-- Current DATE / WEEK dedications load from data/dedications.json -->
-    </aside>
+  <div class="hero-tint"></div>
+
+  <nav class="hero-nav">
+    <a href="#about">About the Mikvah</a>
+    <a href="#donate">To Donate</a>
+    <a href="#dedications">Dedications</a>
+    <a href="#contact">Contact us</a>
+  </nav>
+
+  <img class="hero-logo" src="assets/logo.png" alt="מקוה טהרה מי בלומא — יוניאן">
+
+  <aside class="hero-dedications" id="hero-dedications">
+    <!-- Current DATE / WEEK / MONTH dedications load from data/dedications.json -->
+  </aside>
+
+  <div class="hero-waves"></div>
+  <div class="hero-title-box">
+    <h1>The Union Mikvah</h1>
   </div>
 </section>
 
-<!-- ======== About ======== -->
+<!-- ======== About (artboard 2) ======== -->
 <section id="about" class="about">
-  <div class="about-title">
-    <h2>Union<br>Mikvah</h2>
+  <div class="section-inner two-col">
+    <h2>The<br>Union<br>Mikvah</h2>
+    <div class="about-text">
+      <p>
+        The Union Mikvah was built to serve the heimish community in Union and
+        the surrounding areas with a beautiful, modern mikvah built to the
+        highest standards of halachic hiddur.
+      </p>
+      <p>
+        It is the only mikvah in Central New Jersey built to this level of
+        excellence, serving families from Union and many surrounding towns
+        and cities.
+      </p>
+      <p>
+        With a warm, welcoming atmosphere and meticulous attention to every
+        halachic detail, the Union Mikvah provides a place where every visitor
+        can immerse with comfort, dignity, and peace of mind.
+      </p>
+    </div>
   </div>
-  <div class="about-text">
-    <p>
-      The Union Mikvah was built to serve the heimish community in Union and
-      the surrounding areas with a beautiful, modern mikvah built to the
-      highest standards of halachic hiddur.
-    </p>
-    <p>
-      It is the only mikvah in Central New Jersey built to this level of
-      excellence, serving families from Union and many surrounding towns
-      and cities.
-    </p>
-    <p>
-      With a warm, welcoming atmosphere and meticulous attention to every
-      halachic detail, the Union Mikvah provides a place where every visitor
-      can immerse with comfort, dignity, and peace of mind.
-    </p>
-    <img class="about-photo" src="assets/photos/mikvah-inside.jpg" alt="Inside the Union Mikvah"
-         loading="lazy" onerror="this.style.display='none';">
-  </div>
+  <div class="waves waves-white"></div>
 </section>
 
-<!-- ======== Sponsorship opportunities ======== -->
+<!-- ======== Sponsorship (artboard 3) ======== -->
 <section id="sponsorship" class="sponsorship">
-  <div class="sponsorship-text">
-    <h2>Sponsorship<br>opportunities</h2>
-    <p>
-      There are many opportunities to partner in this important mitzvah.
-      Sponsorships help support the ongoing operation, maintenance, and
-      upkeep of the mikvah, while allowing you to have a meaningful share
-      in this vital institution. Whether through sponsoring a specific area,
-      an operating expense, or making a general dedication, every sponsorship
-      helps ensure that the Union Mikvah continues serving the community at
-      the highest standards.
-    </p>
+  <div class="section-inner two-col">
+    <div class="sponsorship-text">
+      <h2>Sponsorship<br>opportunities</h2>
+      <p>
+        There are many opportunities to partner in this important mitzvah.
+        Sponsorships help support the ongoing operation, maintenance, and
+        upkeep of the mikvah, while allowing you to have a meaningful share
+        in this vital institution. Whether through sponsoring a specific area,
+        an operating expense, or making a general dedication, every sponsorship
+        helps ensure that the Union Mikvah continues serving the community at
+        the highest standards.
+      </p>
+    </div>
+    <div class="sponsorship-tiers">
+      <a class="tier" href="#donate">
+        <span class="tier-name">Sponsor a Day</span>
+        <span class="tier-price" id="price-day"></span>
+      </a>
+      <a class="tier" href="#donate">
+        <span class="tier-name">Sponsor a Week</span>
+        <span class="tier-price" id="price-week"></span>
+      </a>
+      <a class="tier" href="#donate">
+        <span class="tier-name">Sponsor a Month</span>
+        <span class="tier-price" id="price-month"></span>
+      </a>
+    </div>
   </div>
-  <div class="sponsorship-tiers">
-    <a class="tier" href="#donate">
-      <span class="tier-name">Sponsor a Day</span>
-      <span class="tier-price" id="price-day"></span>
-    </a>
-    <a class="tier" href="#donate">
-      <span class="tier-name">Sponsor a Week</span>
-      <span class="tier-price" id="price-week"></span>
-    </a>
-    <a class="tier" href="#donate">
-      <span class="tier-name">Sponsor a Month</span>
-      <span class="tier-price" id="price-month"></span>
-    </a>
-  </div>
+  <div class="waves waves-cyan"></div>
 </section>
 
 <!-- ======== Dedications board ======== -->
 <section id="dedications" class="dedications">
-  <h2>Dedications <span class="heb">לוח הקדשות</span></h2>
-  <div class="dedication-list" id="dedication-list">
-    <!-- Dedications load from data/dedications.json -->
+  <div class="section-inner">
+    <h2>Dedications <span class="heb">לוח הקדשות</span></h2>
+    <div class="dedication-list" id="dedication-list">
+      <!-- Dedications load from data/dedications.json -->
+    </div>
+    <p class="dedications-note">
+      To reserve a date, please <a href="#contact">contact us</a> with your
+      preferred date and the text of the dedication.
+    </p>
   </div>
-  <p class="dedications-note">
-    To reserve a date, please <a href="#contact">contact us</a> with your
-    preferred date and the text of the dedication.
-  </p>
+  <div class="waves waves-cyan"></div>
 </section>
 
-<!-- ======== Testimonials ======== -->
+<!-- ======== Testimonials (artboard 4) ======== -->
 <section id="testimonials" class="testimonials">
-  <h2>Testimonials</h2>
-  <div class="testimonial-cards">
-    <div class="card">
+  <div class="section-inner">
+    <h2>Testimonials</h2>
+    <div class="testimonial-cols">
       <p>
         Mordechai M. made a donation to the Mikvah as a zechus to find the
         right home to purchase. The very next day, a broker showed him a
         house that turned out to be exactly what he was looking for — and,
         to top it off, he was able to purchase it at a great price.
       </p>
-    </div>
-    <div class="card">
       <p>
         After eight years of waiting for a child, Naomi's classmates came
         together to dedicate a room in the Mikvah in her zechus. Nine months
         later, Naomi was holding her own baby boy in her arms.
       </p>
-    </div>
-    <div class="card">
       <p>
         Baruch made a generous donation toward the completion of the Mikvah,
         with a heartfelt wish that it should be a zechus for him to be
@@ -134,40 +136,47 @@
       </p>
     </div>
   </div>
+  <div class="waves waves-white"></div>
 </section>
 
-<!-- ======== Donation Page ======== -->
+<!-- ======== Donation Page (artboard 5) ======== -->
 <section id="donate" class="donation">
-  <h2>Donation<br>Page</h2>
-  <div class="donation-panel">
-    <div class="don-row"><span class="don-label">Zelle</span><span class="don-value" id="info-zelle"></span></div>
-    <div class="don-row"><span class="don-label">Check</span><span class="don-value" id="info-checks"></span></div>
-    <div class="don-row"><span class="don-label">Mail</span><span class="don-value" id="info-mail"></span></div>
+  <div class="section-inner donation-grid">
+    <h2 class="vertical-title">Donation<br>Page</h2>
+    <div class="donation-main">
+      <div class="don-rows">
+        <div class="don-row"><span class="don-label">Zelle</span><span class="don-value" id="info-zelle"></span></div>
+        <div class="don-row"><span class="don-label">Check</span><span class="don-value" id="info-checks"></span></div>
+        <div class="don-row"><span class="don-label">Mail</span><span class="don-value" id="info-mail"></span></div>
+      </div>
+      <p class="ein">Tax ID (EIN) <span id="info-ein"></span></p>
+    </div>
+    <div class="donation-buttons" id="donation-links">
+      <!-- Payment links load from data/config.json -->
+    </div>
   </div>
-  <div class="donation-buttons" id="donation-links">
-    <!-- Payment links load from data/config.json -->
-  </div>
-  <p class="ein">Tax ID (EIN) <span id="info-ein"></span></p>
-  <p class="notice">
-    All donations are tax-deductible to the fullest extent permitted by law.
-    A receipt will be provided for your records.
-  </p>
+  <div class="waves waves-cyan"></div>
 </section>
 
-<!-- ======== Video ======== -->
+<!-- ======== Video (artboard 6) ======== -->
 <section id="video" class="video-section">
-  <video controls preload="metadata" poster="assets/photos/mikvah-hero.jpg">
-    <source src="assets/photos/hero-video.mp4" type="video/mp4">
-  </video>
+  <div class="video-frame">
+    <video controls preload="metadata" poster="assets/photos/mikvah-hero.jpg">
+      <source src="assets/photos/hero-video.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="waves waves-white"></div>
 </section>
 
 <!-- ======== Contact ======== -->
 <section id="contact" class="contact">
-  <h2>Contact us</h2>
-  <div class="donation-panel">
-    <div class="don-row"><span class="don-label">Phone</span><span class="don-value" id="info-phone"></span></div>
-    <div class="don-row"><span class="don-label">Email</span><span class="don-value" id="info-email"></span></div>
-    <div class="don-row"><span class="don-label">Address</span><span class="don-value" id="info-mail2"></span></div>
+  <div class="section-inner">
+    <h2>Contact us</h2>
+    <div class="don-rows">
+      <div class="don-row"><span class="don-label">Phone</span><span class="don-value" id="info-phone"></span></div>
+      <div class="don-row"><span class="don-label">Email</span><span class="don-value" id="info-email"></span></div>
+      <div class="don-row"><span class="don-label">Address</span><span class="don-value" id="info-mail2"></span></div>
+    </div>
   </div>
 </section>
 

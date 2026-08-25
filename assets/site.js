@@ -124,6 +124,7 @@ function renderHeroDedications(data) {
   const kinds = [
     { type: "day", en: "DATE", he: "תאריך" },
     { type: "week", en: "WEEK", he: "שבוע" },
+    { type: "month", en: "MONTH", he: "חודש" },
   ];
   kinds.forEach(({ type, en, he }) => {
     const current = data.dedications
