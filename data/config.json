@@ -8,7 +8,8 @@
   "donationLinks": [
     { "label": "OJC Fund", "url": "https://secure.ojccardpaymentsite.org/MQAAADUAAAA4AAAAOAAAADMAAAA=", "note": "" },
     { "label": "Pledger", "url": "https://org.pledgercharitable.org/ChargeCard?ein=881472954B&camp=", "note": "" },
-    { "label": "Credit Card", "url": "https://secure.cardknox.com/mikvahtaharaunion", "note": "" }
+    { "label": "Credit Card", "url": "https://secure.cardknox.com/mikvahtaharaunion", "note": "" },
+    { "label": "The Donors Fund", "url": "https://thedonorsfund.org/donate/CONGREGATION-UNION---Mikvah-Tehara-of-union-p8921894656649258/881472954", "note": "" }
   ],
   "zelle": "413bergen@gmail.com",
   "checksPayableTo": "Mikvah Tahara of Union Inc.",

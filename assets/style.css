@@ -367,6 +367,7 @@ section .section-inner,
 .donation-buttons a:nth-child(1) { background: #14143c; }  /* OJC */
 .donation-buttons a:nth-child(2) { background: #000000; }  /* Pledger */
 .donation-buttons a:nth-child(3) { background: var(--cyan); }  /* Credit Card */
+.donation-buttons a:nth-child(4) { background: #005bff; }  /* The Donors Fund */
 
 /* ---- Video (artboard 6: cyan bg, white frame) ---- */
 .video-section { background: var(--cyan); }
